@@ -1,0 +1,13 @@
+--DELETE
+BEGIN TRAN;
+
+DELETE FROM testtbl
+WHERE Id= 49;
+
+DELETE FROM testtbl
+WHERE addr='¼­¿ï';
+
+SELECT * FROM testtbl;
+
+COMMIT;
+ROLLBACK;
