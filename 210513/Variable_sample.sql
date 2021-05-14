@@ -2,4 +2,4 @@
 DECLARE @varAge INT;
 SET @varAge = 44;
 
-SELECT @varAge AS '나이';
+SELECT @varAge AS '나이';--결과창(table)

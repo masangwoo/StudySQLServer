@@ -16,9 +16,11 @@ AS
 	FROM cte_summary;*/
 
 	SELECT
-		CASE div
-		WHEN 0 THEN grp
-		WHEN 1 THEN '총합계'END AS [상품그룹]
+
+		IIF(idv=0, grp, '총합계') AS[상품그룹2]
+		,CASE div
+		 WHEN 0 THEN grp
+		 WHEN 1 THEN '총합계'END AS [상품그룹]
 		,summ AS [그룹별 구매금액]
 		,div
 		FROM cte_summary;
