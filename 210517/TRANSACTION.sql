@@ -1,0 +1,45 @@
+--트랜잭션 세번
+BEGIN TRAN
+UPDATE userTBL SET addr='제주'
+WHERE userID='KBS'
+COMMIT
+
+BEGIN TRAN
+UPDATE userTBL SET addr='미국'
+WHERE userID='KKH'
+ROLLBACK
+
+BEGIN TRAN
+UPDATE userTBL SET addr='호주'
+WHERE userID='KBS'
+COMMIT
+
+SELECT * FROM userTBL
+
+--트랜잭션 한번
+BEGIN TRAN
+UPDATE userTBL SET addr='뉴욕' WHERE userID='KBS'
+UPDATE userTBL SET addr='델리' WHERE userID='KKH'
+UPDATE userTBL SET addr='런던' WHERE userID='JYP'
+COMMIT
+
+SELECT * FROM userTBL
+
+USE sampleDB;
+GO
+
+CREATE TABLE testTbl (num INT);
+GO
+
+INSERT INTO testTbl VALUES (1), (3), (5);
+
+BEGIN TRAN
+UPDATE testTbl SET num=11 WHERE num=1;
+UPDATE testTbl SET num=33 WHERE num=3;
+UPDATE testTbl SET num=55 WHERE num=5;
+COMMIT
+ROLLBACK
+
+SELECT * FROM testTbl
+
+SELECT @@TRANCOUNT;

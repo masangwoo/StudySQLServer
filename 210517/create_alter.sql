@@ -1,0 +1,11 @@
+
+USE sampleDB;
+CREATE TABLE ddlTbl
+(
+	Id int NOT NULL PRIMARY KEY IDENTITY(1,1),
+	name NVARCHAR(20) NOT NULL,
+	regDate DATETIME
+);
+GO
+
+ALTER TABLE ddltbl ADD newColumn VARCHAR(10) NOT NULL
